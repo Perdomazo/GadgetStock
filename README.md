@@ -19,7 +19,8 @@ A RESTful API built with **Spring Boot 4.0.1** and **Java 21** for managing gadg
 - Interactive API documentation with Swagger UI
 - Clean architecture with separation of concerns
 
-## 🏗️ Architecture
+##  Architecture
+
 ┌─────────────────┐
 │ Controller │ ← HTTP requests/responses (Presentation Layer)
 └────────┬────────┘
@@ -105,7 +106,8 @@ Swagger UI: http://localhost:8081/swagger-ui.html
 Postman: Import the endpoints manually
 cURL: See usage examples above
 
-###📂 Project Structure
+### Project Structure
+
 src/
 ├── main/
 │   ├── java/com/perdomazo/firstproject/
