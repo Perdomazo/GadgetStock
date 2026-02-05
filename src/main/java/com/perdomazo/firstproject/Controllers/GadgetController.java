@@ -62,6 +62,12 @@ public class GadgetController {
                 .body(gadgetService.update(id, gad));
     }
 
+    @GetMapping("/total-spent")
+    @Transactional
+    public Float totalSpent(){
+        return gadgetService.calculateMoneySpent();
+    }
+
 
 
 

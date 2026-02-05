@@ -69,6 +69,12 @@ public class GadgetService {
             );
 
         }*/
+
+
+    }
+
+    public Float calculateMoneySpent(){
+        return gadgetRepository.getTotalSpent();
     }
 
 }
