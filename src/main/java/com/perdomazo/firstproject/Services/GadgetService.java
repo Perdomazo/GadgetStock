@@ -81,4 +81,16 @@ public class GadgetService {
         gadgetRepository.deleteById(id);
     }
 
+    public void deleteByName(String name){
+        List<GadgetModel> gadgets = gadgetRepository.findByName(name);
+        if(!gadgets.isEmpty()){
+
+            GadgetModel gad = gadgets.getFirst();
+            Long gadId = gad.getId();
+            gadgetRepository.deleteById(gadId);
+
+        }
+
+    }
+
 }

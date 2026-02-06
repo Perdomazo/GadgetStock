@@ -73,9 +73,10 @@ public class GadgetController {
         gadgetService.deleteById(id);
     }
 
-
-
-
+    @DeleteMapping("/delete/name/{name}")
+    public void deleteByName(@PathVariable String name){
+        gadgetService.deleteByName(name);
+    }
 
 
 }
