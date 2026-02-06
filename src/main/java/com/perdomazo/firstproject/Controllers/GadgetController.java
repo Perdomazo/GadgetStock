@@ -68,6 +68,11 @@ public class GadgetController {
         return gadgetService.calculateMoneySpent();
     }
 
+    @DeleteMapping("/delete/{id}")
+    public void deleteById(@PathVariable Long id){
+        gadgetService.deleteById(id);
+    }
+
 
 
 

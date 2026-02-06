@@ -77,4 +77,8 @@ public class GadgetService {
         return gadgetRepository.getTotalSpent();
     }
 
+    public void deleteById(Long id){
+        gadgetRepository.deleteById(id);
+    }
+
 }
