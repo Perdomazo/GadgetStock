@@ -1,6 +1,8 @@
 package com.perdomazo.firstproject.Models;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import java.time.LocalDateTime;
 
 import java.math.BigDecimal;
 
@@ -21,6 +23,12 @@ public class GadgetModel {
     private BigDecimal price; // more accurate with decimals
     private String comments;
     private Boolean repair;
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    private LocalDateTime registerDate;
+    private LocalDateTime soldDate;
+
 
     public Long getId() {
         return id;
