@@ -74,14 +74,26 @@ public class GadgetModel {
 
     public void setRepair(Boolean repair) {this.repair = repair;}
 
+    public LocalDateTime getRegisterDate(){ return registerDate; }
+
+    public void setRegisterDate(LocalDateTime registerDate){ this.registerDate = registerDate;}
+
+    public LocalDateTime getSoldDate(){ return soldDate; }
+
+    public void setSoldDate(LocalDateTime soldDate){ this.soldDate = soldDate;}
+
+
+
     public GadgetModel(){
 
     }
-    public GadgetModel(String name, String model, BigDecimal price, String comments, Boolean repair){
+    public GadgetModel(String name, String model, BigDecimal price, String comments, Boolean repair, LocalDateTime registerDate, LocalDateTime soldDate){
         this.name = name;
         this.model = model;
         this.price = price;
         this.comments = comments;
         this.repair = repair;
+        this.registerDate = registerDate;
+        this.soldDate = soldDate;
     }
 }
