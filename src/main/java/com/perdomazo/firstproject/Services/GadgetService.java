@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+import java.math.BigDecimal;
 import java.util.List;
 //import java.util.Optional;
 //administrar las clases
@@ -23,6 +24,12 @@ public class GadgetService {
     }
 
     public GadgetModel saveGadget(GadgetModel gadget){
+
+        if(Boolean.TRUE.equals(gadget.getIsSold())){
+            if(gadget.getSoldPrice().compareTo(BigDecimal.ZERO) <= 0){
+                throw new IllegalArgumentException("Sold price must be greater than 0");
+            }
+        }
         return gadgetRepository.save(gadget);
     }
 
@@ -39,6 +46,11 @@ public class GadgetService {
 
     public GadgetModel update(Long id, GadgetModel gadget) {
 
+        if(Boolean.TRUE.equals(gadget.getIsSold())){
+            if(gadget.getSoldPrice().compareTo(BigDecimal.ZERO) <= 0){
+                throw new IllegalArgumentException("Sold price must be greater than 0");
+            }
+        }
 
         GadgetModel gad = gadgetRepository.findById(id)
                 .orElseThrow(() ->
