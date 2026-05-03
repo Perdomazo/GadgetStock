@@ -78,5 +78,10 @@ public class GadgetController {
         gadgetService.deleteByName(name);
     }
 
+    @GetMapping("/gadgets-sold")
+    public List<GadgetModel> getAllSoldGadget(){return gadgetService.getAllSoldGadget();}
+
+
+
 
 }

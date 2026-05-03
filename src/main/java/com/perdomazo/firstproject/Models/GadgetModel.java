@@ -24,6 +24,9 @@ public class GadgetModel {
     private String comments;
     private Boolean repair;
 
+    private BigDecimal soldPrice;
+    private Boolean isSold;
+
     @CreationTimestamp
     @Column(updatable = false)
     private LocalDateTime registerDate;
@@ -74,6 +77,14 @@ public class GadgetModel {
 
     public void setRepair(Boolean repair) {this.repair = repair;}
 
+    public BigDecimal getSoldPrice() {return soldPrice;}
+
+    public void setSoldPrice(BigDecimal soldPrice) {this.soldPrice = soldPrice;}
+
+    public Boolean getIsSold() {return isSold;}
+
+    public void setIsSold(Boolean isSold) {this.isSold = isSold;}
+
     public LocalDateTime getRegisterDate(){ return registerDate; }
 
     public void setRegisterDate(LocalDateTime registerDate){ this.registerDate = registerDate;}
@@ -87,12 +98,14 @@ public class GadgetModel {
     public GadgetModel(){
 
     }
-    public GadgetModel(String name, String model, BigDecimal price, String comments, Boolean repair, LocalDateTime registerDate, LocalDateTime soldDate){
+    public GadgetModel(String name, String model, BigDecimal price, String comments, Boolean repair, BigDecimal soldPrice, Boolean isSold,LocalDateTime registerDate, LocalDateTime soldDate){
         this.name = name;
         this.model = model;
         this.price = price;
         this.comments = comments;
         this.repair = repair;
+        this.soldPrice = soldPrice;
+        this.isSold = isSold;
         this.registerDate = registerDate;
         this.soldDate = soldDate;
     }

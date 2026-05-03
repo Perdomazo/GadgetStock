@@ -93,4 +93,7 @@ public class GadgetService {
 
     }
 
+    public List<GadgetModel> getAllSoldGadget(){ return gadgetRepository.findByIsSoldTrue(); }
+
+
 }

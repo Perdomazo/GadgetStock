@@ -17,4 +17,6 @@ public interface GadgetRepository extends JpaRepository<GadgetModel, Long> {
 
     @Query("SELECT SUM (g.price) FROM GadgetModel g")
     Float getTotalSpent();
+
+    List<GadgetModel> findByIsSoldTrue();
 }
