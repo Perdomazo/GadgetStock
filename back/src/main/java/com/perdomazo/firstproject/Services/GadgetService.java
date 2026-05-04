@@ -4,7 +4,10 @@ import com.perdomazo.firstproject.Models.GadgetModel;
 import com.perdomazo.firstproject.Repositories.GadgetRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 
 import java.math.BigDecimal;
@@ -27,7 +30,7 @@ public class GadgetService {
 
         if(Boolean.TRUE.equals(gadget.getIsSold())){
             if(gadget.getSoldPrice().compareTo(BigDecimal.ZERO) <= 0){
-                throw new IllegalArgumentException("Sold price must be greater than 0");
+                throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Sold price must be greater than 0");
             }
         }
         return gadgetRepository.save(gadget);
@@ -48,7 +51,7 @@ public class GadgetService {
 
         if(Boolean.TRUE.equals(gadget.getIsSold())){
             if(gadget.getSoldPrice().compareTo(BigDecimal.ZERO) <= 0){
-                throw new IllegalArgumentException("Sold price must be greater than 0");
+                throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Sold price must be greater than 0");
             }
         }
 
