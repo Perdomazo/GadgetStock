@@ -16,3 +16,7 @@ Desarrollar parte del front con los endpoints ya creados
 05/05/2026
 Se limpio lo innecesario de los css y se hizo una mini landing page
 Listar productos en landing page
+
+06/05/2026
+Lista hardcodeada
+Hacerlo con Useeffect
