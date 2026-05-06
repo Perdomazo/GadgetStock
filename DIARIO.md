@@ -12,3 +12,7 @@ Hacer que devuelva 400 enves de 500.Con @ExceptionHandler
 Se hico la validacion con el error 500.
 Se empezo la parte del frontend del proyecto.
 Desarrollar parte del front con los endpoints ya creados
+
+05/05/2026
+Se limpio lo innecesario de los css y se hizo una mini landing page
+Listar productos en landing page
