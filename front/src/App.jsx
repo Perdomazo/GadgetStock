@@ -2,18 +2,11 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import thragg from './assets/download.jpeg'
 import './App.css'
+import { useFetch } from './useFetch'
 
 function App() {
   const [count, setCount] = useState(0)
-
-  const [gadgets, setGadgets] = useState([
-  { id: 1, name: "iPhone 7", price: 1000, isSold: true, soldPrice: 800 },
-  { id: 2, name: "Samsung S21", price: 3000, isSold: false, soldPrice: null }
-]);
-
-  useEffect(() => {
-
-    });
+  const { data } = useFetch('http://localhost:8080/gadget')
 
   return (
     <>
@@ -26,14 +19,15 @@ function App() {
           <p>
             <code>Pronto el listado completo desde el BACKEND</code>
           </p>
-          <ul>
-            {gadgets.map((item)=>(
-              <li key={item.id}>
-                {item.name} - ${item.price} - {item.isSold} - ${item.soldPrice}
-              </li>
-            ))}
-          </ul>
         </div>
+        <ul>
+          {data ? data.map((gadget) =>
+             (<li key={gadget.id}>
+                {gadget.name} - {gadget.model} - ${gadget.price.toFixed(2)} - 
+                {gadget.comments} - 
+              </li>))
+               : <li>Loading...</li>}
+        </ul>
         <button
           type="button"
           className="counter"
