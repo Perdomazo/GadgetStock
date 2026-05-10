@@ -6,7 +6,8 @@ import { useFetch } from './useFetch'
 
 function App() {
   const [count, setCount] = useState(0)
-  const { data } = useFetch('http://localhost:8080/gadget')
+  const { data, loading, error} = useFetch('http://localhost:8080/gadget')
+  
 
   return (
     <>
@@ -21,12 +22,14 @@ function App() {
           </p>
         </div>
         <ul>
-          {data ? data.map((gadget) =>
-             (<li key={gadget.id}>
+          {loading && <p>Loading...</p>}
+          {error && <p>Error: {error.message}</p>}
+          {data?.map((gadget) => (
+             <li key={gadget.id}>
                 {gadget.name} - {gadget.model} - ${gadget.price.toFixed(2)} - 
                 {gadget.comments} - 
-              </li>))
-               : <li>Loading...</li>}
+             </li>))}
+
         </ul>
         <button
           type="button"

@@ -26,3 +26,7 @@ Hecho el listado de gadgets de la base de datos
 useFetch
 
 crear tabla y usar mas endpoints
+
+10/05/2026
+Arreglado loading, added error.
+
